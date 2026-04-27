@@ -1,13 +1,13 @@
 function afficher() {
     const membres = JSON.parse(localStorage.getItem("membres")) || [];
-    const thead = document.getElementById("thead0");
-    const tbody = document.getElementById("tbody0");
+    const enteteTableau = document.getElementById("enteteTableau");
+    const corpsTableau = document.getElementById("corpsTableau");
 
-    thead.innerHTML = "";
-    tbody.innerHTML = "";
+    enteteTableau.innerHTML = "";
+    corpsTableau.innerHTML = "";
 
-    const headerRow = document.createElement("tr");
-    const headers = [
+    const ligneEntete = document.createElement("tr");
+    const entetes = [
         "Email",
         "Voir",
         "Ajouter tâches",
@@ -15,55 +15,72 @@ function afficher() {
         "Supprimer"
     ];
 
-    headers.forEach(text => {
+    entetes.forEach(text => {
         const th = document.createElement("th");
         th.textContent = text;
-        headerRow.appendChild(th);
+        ligneEntete.appendChild(th);
     });
-    thead.appendChild(headerRow);
+    enteteTableau.appendChild(ligneEntete);
 
     if (membres.length === 0) {
         const emptyRow = document.createElement("tr");
         const emptyCell = document.createElement("td");
-        emptyCell.colSpan = headers.length;
+        emptyCell.colSpan = entetes.length;
         emptyCell.textContent = "Aucun utilisateur enregistré.";
         emptyCell.style.textAlign = "center";
         emptyRow.appendChild(emptyCell);
-        tbody.appendChild(emptyRow);
+        corpsTableau.appendChild(emptyRow);
         return;
     }
 
-    membres.forEach((user, index) => {
-        if ((user.Statut || "").toLowerCase() !== "actif") {
+    membres.forEach((utilisateur, indexUtilisateur) => {
+        if ((utilisateur.Statut || "").toLowerCase() !== "actif") {
             return;
         }
 
         const tr = document.createElement("tr");
 
         const emailTd = document.createElement("td");
-        emailTd.textContent = user.email || "";
+        emailTd.textContent = utilisateur.email || "";
         tr.appendChild(emailTd);
 
-        const actionButtons = [
-            { text: "Voir", href: `afficherUser.html?index=${index}`, className: "view" },
-            { text: "Ajouter tâches", href: `ajouterTache.html?index=${index}`, className: "task" },
-            { text: "Modifier", href: `update.html?index=${index}`, className: "edit" },
-            { text: "Supprimer", href: `add.html?index=${index}`, className: "delete" }
+        const boutonsAction = [
+            { text: "Voir", href: `afficherUser.html?index=${indexUtilisateur}`, className: "voir" },
+            { text: "Ajouter tâches", href: `../gestionTache/addTache.html?index=${indexUtilisateur}`, className: "tache" },
+            { text: "Modifier", href: `update.html?index=${indexUtilisateur}`, className: "modifier" },
+            { text: "Supprimer", href: null, className: "supprimer" }
         ];
 
-        actionButtons.forEach(action => {
+        boutonsAction.forEach(action => {
             const td = document.createElement("td");
-            const link = document.createElement("a");
-            link.href = action.href;
-            const btn = document.createElement("button");
-            btn.type = "button";
-            btn.className = `action-button ${action.className}`;
-            btn.textContent = action.text;
-            link.appendChild(btn);
-            td.appendChild(link);
+            const bouton = document.createElement("button");
+            bouton.type = "button";
+            bouton.className = `action-button ${action.className}`;
+            bouton.textContent = action.text;
+
+            if (action.className === "supprimer") {
+                bouton.addEventListener("click", () => {
+                    if (!confirm("Voulez-vous vraiment marquer cet utilisateur comme inactif ?")) {
+                        return;
+                    }
+                    const membres = JSON.parse(localStorage.getItem("membres")) || [];
+                    if (membres[indexUtilisateur]) {
+                        membres[indexUtilisateur].Statut = "Inactif";
+                        localStorage.setItem("membres", JSON.stringify(membres));
+                        afficher();
+                    }
+                });
+                td.appendChild(bouton);
+            } else {
+                const link = document.createElement("a");
+                link.href = action.href;
+                link.appendChild(bouton);
+                td.appendChild(link);
+            }
+
             tr.appendChild(td);
         });
 
-        tbody.appendChild(tr);
+        corpsTableau.appendChild(tr);
     });
 }

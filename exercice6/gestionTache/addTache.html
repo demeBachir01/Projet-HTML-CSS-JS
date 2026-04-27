@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ajouter une tâche</title>
+    <link rel="stylesheet" href="../gestionUser/projet.css">
 </head>
 <body>
-    <div class="container">
-        <h1>To-Do List</h1>
-        <div class="input-container">
-            <input type="text" id="taskInput" placeholder="Add a new task...">
-            <button id="addTaskButton">Add Task</button>
+    <div class="conteneur">
+        <h1 id="titrePage">Ajouter une tâche</h1>
+        <p id="nomUtilisateur" class="nom-utilisateur"></p>
+        <div id="infosUtilisateur" class="infos-utilisateur"></div>
+        <div class="zone-saisie">
+            <input type="text" id="texteTache" placeholder="Ajouter une nouvelle tâche...">
+            <select id="etatTache" aria-label="Statut de la tâche">
+                <option value="En attente">En attente</option>
+                <option value="En cours">En cours</option>
+                <option value="Terminée">Terminée</option>
+                <option value="Annulée">Annulée</option>
+            </select>
+            <button id="boutonAjouter" type="button">Ajouter</button>
         </div>
-        <ul id="taskList"></ul>
+        <ul id="listeTaches"></ul>
+        <a class="back-link lien-retour" href="../gestionUser/listUser.html">Retour à la liste des utilisateurs</a>
     </div>
+    <script src="addTache.js"></script>
 </body>
 </html>

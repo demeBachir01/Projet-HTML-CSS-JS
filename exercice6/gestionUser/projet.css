@@ -87,7 +87,7 @@ body {
   background-color: #eef2f5;
 }
 
-.table-container {
+.conteneur-tableau {
   max-width: 1100px;
   margin: 30px auto;
   padding: 28px;
@@ -97,10 +97,269 @@ body {
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
 }
 
-.table-container h1 {
+.conteneur-tableau h1 {
   margin-bottom: 22px;
   color: #2f3b46;
   text-align: center;
+}
+
+.conteneur-details {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 28px;
+  background-color: #ffffff;
+  border: 1px solid #dde2e8;
+  border-radius: 10px;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+}
+
+.conteneur-details h1 {
+  margin-bottom: 22px;
+  color: #2f3b46;
+  text-align: center;
+}
+
+.carte-utilisateur {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid #e4e8ed;
+  border-radius: 14px;
+  background-color: #f8fbff;
+}
+
+.carte-utilisateur h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #1f2937;
+}
+
+.user-status {
+  margin: 0;
+  color: #2f7b35;
+  font-weight: 600;
+}
+
+.conteneur {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 28px;
+  background-color: #ffffff;
+  border: 1px solid #dde2e8;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(24, 42, 74, 0.08);
+}
+
+#titrePage {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  color: #1f2a45;
+  text-align: center;
+}
+
+.nom-utilisateur {
+  margin: 0 0 22px;
+  color: #4a5768;
+  text-align: center;
+}
+
+.zone-saisie {
+  display: grid;
+  grid-template-columns: 1fr minmax(160px, 220px) auto;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+#texteTache,
+#etatTache {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 1px solid #cfd8e3;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  color: #1d2b44;
+}
+
+#etatTache {
+  appearance: none;
+  cursor: pointer;
+}
+
+#boutonAjouter {
+  min-width: 120px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  background-color: #4caf50;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#boutonAjouter:hover {
+  background-color: #43a047;
+  transform: translateY(-1px);
+}
+
+#listeTaches {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+#listeTaches li {
+  padding: 16px 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4fbff 100%);
+  border: 1px solid #d8e5ef;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(15, 34, 64, 0.06);
+  color: #22303f;
+  font-size: 0.99rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.element-tache {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.texte-tache {
+  font-weight: 600;
+  line-height: 1.4;
+  color: #172b4d;
+}
+
+.conteneur-etat {
+  min-width: 170px;
+}
+
+.selection-etat {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cfd8e3;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #1d2b44;
+  font-size: 14px;
+}
+
+#listeTaches li:first-child {
+  font-weight: 600;
+}
+
+.section-taches {
+  margin-top: 24px;
+}
+
+.liste-taches {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.liste-taches .element-tache {
+  padding: 16px 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4fbff 100%);
+  border: 1px solid #d8e5ef;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(15, 34, 64, 0.06);
+  color: #22303f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-etat {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background-color: #e8f6ff;
+  color: #1d567d;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+#infosUtilisateur {
+  margin-bottom: 24px;
+}
+
+.infos-utilisateur .carte-utilisateur {
+  padding: 20px;
+}
+
+#etatTache {
+  appearance: none;
+  cursor: pointer;
+}
+
+.back-link {
+  display: block;
+  margin-top: 26px;
+  color: #4caf50;
+  font-weight: bold;
+  text-align: center;
+}
+
+.back-link:hover {
+  color: #388e3c;
+}
+
+.action-button,
+#boutonVoirTaches {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4caf50 0%, #39a66a 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 26px rgba(51, 147, 83, 0.17);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  text-decoration: none;
+}
+
+.action-button:hover,
+#boutonVoirTaches:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(51, 147, 83, 0.22);
+  filter: brightness(1.05);
+}
+
+.action-button:active,
+#boutonVoirTaches:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 18px rgba(51, 147, 83, 0.18);
+}
+
+#boutonVoirTaches {
+  margin: 20px auto 0;
+  display: block;
+}
+
+.element-info strong {
+  color: #32404d;
+}
+
+.element-info span {
+  color: #4a5664;
+  word-break: break-word;
 }
 
 table {
@@ -149,20 +408,52 @@ table button {
   transition: transform 0.18s ease, opacity 0.18s ease;
 }
 
-table button.view {
-  background-color: #ff9800;
+.action-button.voir,
+table button.voir {
+  background-color: #4caf50 !important;
+  background-image: none !important;
 }
 
-table button.task {
-  background-color: #2196f3;
+.action-button.voir:hover,
+table button.voir:hover {
+  background-color: #388e3c !important;
+  background-image: none !important;
 }
 
-table button.edit {
-  background-color: #4caf50;
+.action-button.tache,
+table button.tache {
+  background-color: #2196f3 !important;
+  background-image: none !important;
 }
 
-table button.delete {
-  background-color: #f44336;
+.action-button.tache:hover,
+table button.tache:hover {
+  background-color: #1976d2 !important;
+  background-image: none !important;
+}
+
+.action-button.modifier,
+table button.modifier {
+  background-color: #e79a0b !important;
+  background-image: none !important;
+}
+
+.action-button.modifier:hover,
+table button.modifier:hover {
+  background-color: #c27b00 !important;
+  background-image: none !important;
+}
+
+.action-button.supprimer,
+table button.supprimer {
+  background-color: #f44336 !important;
+  background-image: none !important;
+}
+
+.action-button.supprimer:hover,
+table button.supprimer:hover {
+  background-color: #d32f2f !important;
+  background-image: none !important;
 }
 
 table button:hover {
@@ -170,10 +461,31 @@ table button:hover {
   transform: translateY(-1px);
 }
 
-.back-link {
+.back-link.tache {
+  display: block;
+  margin-top: 22px;
+  color: #31cbe7;
+  font-weight: bold;
+}
+
+.back-link.voir {
   display: block;
   margin-top: 22px;
   color: #4caf50;
+  font-weight: bold;
+}
+
+.back-link.modifier {
+  display: block;
+  margin-top: 22px;
+  color: #d1ef11;
+  font-weight: bold;
+}
+
+.back-link.supprimer {
+  display: block;
+  margin-top: 22px;
+  color: #f6060e;
   font-weight: bold;
 }
 

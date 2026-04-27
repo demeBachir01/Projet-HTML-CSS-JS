@@ -11,7 +11,7 @@ function ajouter(e) {
   // Récupérer le formulaire et créer un FormGroup
   const form = document.querySelector('form');
   const formGroup = new FormData(form);
-  
+
   // Convertir FormData en objet
   const formValues = Object.fromEntries(formGroup);
   
@@ -19,7 +19,7 @@ function ajouter(e) {
   
   alert(nom + " " + prenom + " " + genre + " " + date + " " + numPhone + " " + adresse + " " + role + " " + mail);
   let user = { 
-     Nom: nom,
+      Nom: nom,
       Prenom: prenom,
       DateDeNaissance: date,
       Genre: genre,
