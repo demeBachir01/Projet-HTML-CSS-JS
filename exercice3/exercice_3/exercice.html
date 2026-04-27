@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercice 3</title>
+</head>
+<script src="exercice3.js"></script>
+<body>
+    <div id="teste"></div>
+    <form id = "form">
+        <p>Nom :</p>
+        <input type="text"id="nom" required>
+        <p>Age :</p>
+        <input type="number" id = "age" required>
+        <p>Sexe</p>
+        <input type="radio" name="sexe" required> HOMME
+        <input type="radio" name="sexe" required>FEMME
+        <p>Loisir</p>
+            <input name="Loisir" value="Lire" type="checkbox"> Lecture
+            <input name="Loisir" value="Jeux societe"  type="checkbox"> Jeux societe
+            <input name="Loisir" value="Cours"  type="checkbox"> Cours
+            <input name="Loisir" value="Voyage"  type="checkbox"> Voyage
+            <input name="Loisir" value="Yoga"  type="checkbox"> Yoga
+        <select required>
+            <option name="pays" value="">Choisir votre pays</option>
+            <option name="pays" value="SN">Senegal</option>
+            <option name="pays" value="FR">France</option>
+            <option name="pays" value="ML">Mali</option>
+            <option name="pays" value="MR">Maroc</option>
+        </select>
+        <textarea id="commentaire" required></textarea>
+        <input id = "envoyer" type="submit" onclick="afficherResultat()">
+    </form>
+</body>
+</html>
+
+
+
+
+

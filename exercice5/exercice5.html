@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=bbb, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P>hjkl</P>
+    <button id="change">Mode sombre</button>
+</body>
+<script>
+    const button = document.getElementById("change");
+    button.addEventListener("click", function() {
+        if (button.textContent === "Mode sombre") {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+            button.textContent = "Mode clair";
+        } else {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            button.textContent = "Mode sombre";
+        }
+    });
+</script>
+</html>

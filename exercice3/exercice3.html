@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="exercie3.css">
+    <title>Exercice 3</title>
+</head>
+    <script src="exercice3.js"></script>
+<body onclick="teste()">
+   <form action="" class="form" id="classe" onclick="myFonction()">
+     <div class="forn">
+        <label class="nom">Nom :</label>
+        <input type="text" name="nom" id="nom" required>
+    </div>
+   <div class="forn">
+        <label class="age">Age : </label>
+        <input type="number" name="age" id="age" required>
+   </div>
+   <div class="forn">
+        <label class="sexe">Sexe :</label>
+        <label for=""> 
+            <input type="radio" name="sexe" id ="sexe"  required > HOMME
+        </label>
+        <label for="">
+            <input type="radio" name="sexe"  id="sexe"  required > FEMME
+        </label>
+    </div>
+   <div class="forn">
+    <label for="">PAYS : </label>
+        <select name="pays" id="pays" required>
+            <option value="">choisir votre pays</option>
+            <option value="SENEGAL">SENEGAL</option>
+            <option value="FRANCE">FRANCE</option>
+            <option value="MALI">MALI</option>
+            <option value="MAROC">MAROC</option>
+            <option value="ITALY">ITALY</option>
+            <option value="JAPON">JAPON</option>
+            <option value="GAMBIE">GAMBIE</option>
+        </select>
+   </div>
+   <div class="forn">
+        <label >COMMENTAIRE :  </label>
+        <textarea name="" id="Commentaire" required placeholder="votre commentaire"></textarea>
+   </div>
+   <button id = "valider" type="submit">VALIDER</button>
+   </form>
+</body>
+</html>

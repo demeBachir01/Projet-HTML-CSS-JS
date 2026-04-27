@@ -1,0 +1,33 @@
+.forn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form {
+    background-position-x: center;
+    margin-left: 200px;
+    background-color: beige;
+    width: 60%;
+    font-size: large;
+}
+
+.nom{
+    font-size: larger;
+}
+
+.age{
+    font-size: larger;
+}
+
+.sexe{
+    font-size: larger;
+}
+
+#pays{
+    font-size: larger;
+}
+
+#valider {
+    font-size: large;
+    background-color:green;
+    text-align: center;
+}

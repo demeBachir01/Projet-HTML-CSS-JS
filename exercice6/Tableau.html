@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Supprimer</th>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td>DIallo</td>
+                <td id="nom">Mamadou</td>
+                <td>
+                    <a href="listUser.html">
+                        <button>Supprimer</button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="afficher()">Afficher</button>
+    
+</body>
+<script>
+  function test(){
+      let name = document.getElementById("nom");
+      window.alert("Voulez-vous supprimer l'utilisateur " + name.textContent + " ?");
+      }
+  
+    function afficher(){
+    let tbody = document.getElementById("tbody");
+    let tr1 = document.createElement("tr");
+    let td1 = document.createElement("td");
+    let tr2 = document.createElement("tr");
+    td1.textContent = "Aby";
+    let td2 = document.createElement("td");
+    td2.textContent = "Faye";
+
+    // Ajouter user Rahma Seck
+    let td3 = document.createElement("td");
+    td3.textContent = "Rahma";
+    let td4 = document.createElement("td");
+    td4.textContent = "Seck";
+    let td5 = document.createElement("td");
+    tr2.appendChild(td3);
+    tr2.appendChild(td4);
+    tr2.appendChild(td5);
+    tr1.appendChild(td1);
+    tr1.appendChild(td2);
+    tr1.appendChild(td5);
+
+    tbody.appendChild(tr1);
+    tbody.appendChild(tr2);
+    }
+</script>
+</html>
